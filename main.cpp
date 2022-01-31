@@ -8,7 +8,7 @@
 using namespace std;
 
 void printObjects(vector<item*> objects);
-void dropAddItem(char* item, room* currentRoom, vector<item*> &objects, int addOrDrop, char* iName);
+void dropAddItem(char* item, room* currentRoom, vector<item*> &objects, int addOrDrop);
 void printRoom(room* a, vector<item*> b);
 
 int main(){
@@ -149,7 +149,7 @@ int main(){
   rooms.push_back(gym);
   rooms.push_back(dramaroom);
   
-  Room* currentRoom = litclass;
+  room* currentRoom = litclass;
   int input;
   cout << "Hi, this is the game ZUUL. You can go to a room, pick an item, drop an item, or quit the game. Have fun!"<< endl;
   while(true){
@@ -192,7 +192,8 @@ int main(){
 void printRoom(room* a, vector<item*> b){
 
   char display[150];
-  strcpy(print,(a->getDes()));
+  char* roomm = a->getDes()
+  strcpy(print,roomm);
   cout << print << endl;
   a->printItems();
   cout << "Exits:" << endl;
