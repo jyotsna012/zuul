@@ -5,6 +5,6 @@ item::item(char* newN){
   name = new char[200];
   strcpy(label, newN);
 }
-char* item :: getName(){
+char* item::getName(){
   return name;
 }
