@@ -164,13 +164,24 @@ int main(){
       break;
     }
     else if(input == 1){
-      char exit[10];
-      cout << "type which exit you would like to use" << endl;
-      cout << "hello" << endl;
-      cin.get(exit,10);
-      cin.get();
-      cout << "hello" << endl;
-      if(currentRoom->getNextRoom(exit)!=NULL){
+      char diDir[20];
+      int exit;
+      cout << "type which exit you would like to use. Enter 1 for North, 2 for East. 3 for South, 4 for West" << endl;
+      cin >> exit;
+      if(exit == 1){
+      	strcpy(diDir, "NORTH");
+      }
+      if(exit == 2){
+      	strcpy(diDir, "EAST");
+      }
+      if(exit == 3){
+	strcpy(diDir, "SOUTH");
+      }
+      if(exit == 4){
+	strcpy(diDir, "WEST");
+      }
+	    
+      if(currentRoom->getNextRoom(diDir)!=NULL){
 	currentRoom = currentRoom->getNextRoom(exit);
       }
       else{
