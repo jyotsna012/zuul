@@ -9,7 +9,7 @@ using namespace std;
 
 void printObjects(vector<item*> objects);
 void dropAddItem(char* item, room* currentRoom, vector<item*> &objects, int addOrDrop, char* iName);
-void printRoom(room* a, vector<item*> b)
+void printRoom(room* a, vector<item*> b);
 
 int main(){
   
