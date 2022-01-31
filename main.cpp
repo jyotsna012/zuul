@@ -166,6 +166,7 @@ int main(){
     else if(input == 1){
       char exit[10];
       cout << "type which exit you would like to use" << endl;
+      cout << "hello" << endl;
       cin.get(exit,10);
       cin.get();
       if(currentRoom->getNextRoom(exit)!=NULL){
