@@ -193,19 +193,49 @@ int main(){
       char in[100];
       cout << "which item will you pick up. enter the number associated with the item" << endl;
       cin >> choice;
+      if(choice == 1){
+      	strcpy(in, "Paper Towel - 1");
+      }
+      if(choice == 2){
+      	strcpy(in, "book -2");
+      }
       if(choice == 3){
       	strcpy(in, "microscope - 3");
+      }
+      if(choice == 4){
+      	strcpy(in, "computer - 4");
+      }
+      if(choice == 5){
+      	strcpy(in, "costumes - 5");
       }
       cout<<"working1"<<endl;
       dropAddItem(in, currentRoom, objects, 1);
       cout<<"working2"<<endl;
     }
     else if(input == 3){
+      int choice;
       char in[100];
-      cout << "which item do you want to drop" << endl;
-      cin.get(in,10);
-      cin.get();
+      cout << "which item will you pick up. enter the number associated with the item" << endl;
+      cin >> choice;
+      if(choice == 1){
+      	strcpy(in, "Paper Towel - 1");
+      }
+      if(choice == 2){
+      	strcpy(in, "book -2");
+      }
+      if(choice == 3){
+      	strcpy(in, "microscope - 3");
+      }
+      if(choice == 4){
+      	strcpy(in, "computer - 4");
+      }
+      if(choice == 5){
+      	strcpy(in, "costumes - 5");
+      }
+      cout<<"working1"<<endl;
       dropAddItem(in, currentRoom, objects, 2);
+      cout<<"working2"<<endl;
+    }
     }
   }
   
