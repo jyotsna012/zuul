@@ -210,7 +210,7 @@ void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int ad
 	if(addOrDrop == 2){
 		
 		 for(vector<item*>::iterator it=objectss.begin(); it!=objectss.end(); it++){
-   		 	char* currentL = (*it)->getLabel() 
+   		 	char* currentL = (*it)->getName(); 
 		 	if(strcmp(iName,currentL)==0){
      		 	currentRoom->addItem(*it);
 			    inventory.erase(it);
@@ -221,7 +221,7 @@ void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int ad
 }
 
 void printObjects(vector<item*> objects){
-  for(vector<item*>::iterator it=inventory.begin(); it!=inventory.end(); it++){
-    cout << (*it)->getLabel() << "  ";
+  for(vector<item*>::iterator it=objects.begin(); it!=objects.end(); it++){
+    cout << (*it)->getName() << "  ";
   }
 }
