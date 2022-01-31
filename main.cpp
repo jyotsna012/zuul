@@ -192,13 +192,12 @@ int main(){
 void printRoom(room* a, vector<item*> b){
 
   char display[150];
-  char* roomm = a->getDes();
-  strcpy(print,roomm);
-  cout << print << endl;
+  strcpy(display,(a->getDescription()));
+  cout << display << endl;
   a->printItems();
-  cout << "Exits:" << endl;
+  cout << "There are exits:" << endl;
   a->printExits();
-  cout << "Objects you have:" << endl;
+  cout << "Your inventory has:" << endl;
   printObjects(b);
   cout << endl;
 }
