@@ -69,6 +69,6 @@ char* room::getDes(){
 char* room::getLabel(){
   return label;
 }
-void Room::addAround(char* direction, Room* neighbor){
+void room::addAround(char* direction, room* neighbor){
   neighbors.insert({direction,neighbor});
 }
