@@ -3,6 +3,7 @@
 #inlcude <map>
 #inlcude <vector>
 #include "room.h"
+#include "item.h"
 
 using namespace std;
 
