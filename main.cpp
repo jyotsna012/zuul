@@ -144,5 +144,56 @@ int main(){
   rooms.push_back(library);
   rooms.push_back(gym);
   rooms.push_back(dramaroom);
+  
+  Room* currentRoom = litclass;
+  int input;
+  cout << "Hi, this is the game ZUUL. You can go to a room, pick an item, drop an item, or quit the game. Have fun!"<< endl;
+  while(true){
+    cout << endl;
+    printRoom(currentRoom,objects);
+    if(currentRoom == gym){
+      break;
+    }
+    cout << "You can enter 1 for go, 2 for pick up, 3 for drop, or 4 for quit!" << endl;
+    cin >> input;
+    if(input == 4){
+      break;
+    }
+    else if(input == 1){
+      char dir[10];
+      cout << "enter the direction you want to exit" << endl;
+      cin.get(dir,10);
+      cin.get();
+      currentRoom = currentRoom->getNextRoom(dir);
+    }
+    else if(input == 2){
+      char in[10];
+      cout << "which item will you pick up" << endl;
+      cin.get(in,10);
+      cin.get();
+      addItem(currentRoom,in,objects);
+    }
+    else if(input == 3){
+      char in[10];
+      cout << "which item do you want to drop" << endl;
+      cin.get(in,10);
+      cin.get();
+      dropItem(in,currentRoom,objects);
+    }
+  }
+  
+  return 0;
+}
 
+void printRoom(room* a, vector<item*> b){
+
+  char display[150];
+  strcpy(print,(a->getDes()));
+  cout << print << endl;
+  a->printItems();
+  cout << "Exits:" << endl;
+  a->printExits();
+  cout << "Objects you have:" << endl;
+  printObjects(b);
+  cout << endl;
 }
