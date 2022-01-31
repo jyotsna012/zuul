@@ -11,15 +11,16 @@ class room{
     char* des;
     char* label;
     vector<item*> items;
-    map<char*, room*> neighbors;
     room(char*,char*);
     room* getNextRoom(char*);
     item* getItem(char*);
     void addItem(item*);
     void printTheItems();
     void printTheExits();
-    void addAround(char*, room*);
+    void addAround(char*,Room*);
     char* getDes();
     char* getLabel();
     void removeItem(char*);
+    map<char*,room*> neighbors;
+
 };
