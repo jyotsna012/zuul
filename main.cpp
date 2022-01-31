@@ -164,11 +164,16 @@ int main(){
       break;
     }
     else if(input == 1){
-      char dir[10];
-      cout << "enter the direction you want to exit" << endl;
-      cin.get(dir,10);
+      char exit[10];
+      cout << "type which exit you would like to use" << endl;
+      cin.get(exit,10);
       cin.get();
-      currentRoom = currentRoom->getNextRoom(dir);
+      if(currentRoom->getNextRoom(exit)!=NULL){
+	currentRoom = currentRoom->getNextRoom(exit);
+      }
+      else{
+	cout << "this is not a valid exit" << endl;
+      }
     }
     else if(input == 2){
       char in[10];
