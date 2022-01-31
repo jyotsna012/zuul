@@ -213,7 +213,7 @@ void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int ad
    		 	char* currentL = (*it)->getName(); 
 		 	if(strcmp(iName,currentL)==0){
      		 	currentRoom->addItem(*it);
-			    inventory.erase(it);
+			    objectss.erase(it);
 		    	break;
 		    }
 		}
