@@ -89,6 +89,21 @@ int main(){
   strcpy(des ,"We are in the Gym");
   room* gym = new room(label,des);
   
+  bathroom -> addAround(S, mathclass);
+  mathclass -> addAround(S, chemclass );
+  mathclass -> addAround(N, bathroom);
+  mathclass -> addAround(E, bioclass);
+  chemclass -> addAround(N, mathclass);
+  bioclass -> addAround(E, litclass);
+  bioclass -> addAround(W, mathclass);
+  physicsclass -> addAround(S, litclass);
+  litclass -> addAround(N, physicsclass);
+  litclass -> addAround(S, historyclass);
+  litclass -> addAround(E, frenchclass );
+  litclass -> addAround(W, bioclass);
+
+  
+
   rooms.push_back(bathroom);
   rooms.push_back(mathclass);
   rooms.push_back(chemclass);
