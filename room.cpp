@@ -16,7 +16,7 @@ room::room(char* nLabel, char* nDes){
 
 void room::printTheItems(){
   cout << "here are the items in this room: " << endl;
-  for(vector<item*> :: interator it = items.begin(); it != items.end(); it++){
+  for(vector<item*> :: iterator it = items.begin(); it != items.end(); it++){
     cout << (*it)->getName() << endl;
   }
 }
