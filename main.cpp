@@ -9,6 +9,11 @@ using namespace std;
 
 int main(){
   
+  char N[10] = "NORTH";
+  char E[10] = "EAST";
+  char S[10] = "SOUTH";
+  char W[10] = "WEST";
+  
   char item[200] = " Paper Towel ";
   char label[200] = "French Class";
   char des[200] = "Bonjour! You are in the French Class... Yayyy!!";
