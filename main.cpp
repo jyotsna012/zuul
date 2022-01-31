@@ -169,6 +169,7 @@ int main(){
       cout << "hello" << endl;
       cin.get(exit,10);
       cin.get();
+      cout << "hello" << endl;
       if(currentRoom->getNextRoom(exit)!=NULL){
 	currentRoom = currentRoom->getNextRoom(exit);
       }
