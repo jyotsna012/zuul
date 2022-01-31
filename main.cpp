@@ -7,6 +7,10 @@
 
 using namespace std;
 
+void printObjects(vector<item*> objects);
+void dropAddItem(char* item, room* currentRoom, vector<item*> &objects, int addOrDrop, char* iName);
+void printRoom(room* a, vector<item*> b)
+
 int main(){
   
   vector<item*> objects;
@@ -171,14 +175,14 @@ int main(){
       cout << "which item will you pick up" << endl;
       cin.get(in,10);
       cin.get();
-      addItem(currentRoom,in,objects);
+      dropAddItem(in, currentRoom, objects, 1);
     }
     else if(input == 3){
       char in[10];
       cout << "which item do you want to drop" << endl;
       cin.get(in,10);
       cin.get();
-      dropItem(in,currentRoom,objects);
+      dropAddItem(in, currentRoom, objects, 2);
     }
   }
   
@@ -196,4 +200,28 @@ void printRoom(room* a, vector<item*> b){
   cout << "Objects you have:" << endl;
   printObjects(b);
   cout << endl;
+}
+void dropAddItem(char* iName, room* currentRoom, vector<item*> &objects, int addOrDrop){
+
+	if(addOrDrop == 1){
+		objects.push_back(currentRoom->getItem(iName));
+    		currentRoom->removeItem(iName);	
+	}
+	if(addOrDrop == 2){
+		
+		 for(vector<item*>::iterator it=objects.begin(); it!=objects.end(); it++){
+   		 	char* currentL = (*it)->getLabel() 
+		 	if(strcmp(iName,currentL)==0){
+     		 	currentRoom->addItem(*it);
+			    inventory.erase(it);
+		    	break;
+		    }
+		}
+	}
+}
+
+void printObjects(vector<item*> objects){
+  for(vector<item*>::iterator it=inventory.begin(); it!=inventory.end(); it++){
+    cout << (*it)->getLabel() << "  ";
+  }
 }
