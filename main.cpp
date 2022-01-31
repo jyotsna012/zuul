@@ -8,7 +8,7 @@
 using namespace std;
 
 void printObjects(vector<item*> objects);
-void dropAddItem(char* item, room* currentRoom, vector<item*> &objectss, int addOrDrop);
+void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int addOrDrop);
 void printRoom(room* a, vector<item*> b);
 
 int main(){
