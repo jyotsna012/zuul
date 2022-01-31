@@ -194,10 +194,11 @@ int main(){
       cout << "which item will you pick up. enter the number associated with the item" << endl;
       cin >> choice;
       if(choice == 3){
-      	strcpy(in, "microscope - 1");
-      
+      	strcpy(in, "microscope - 3");
       }
+      cout<<"working1"<<endl;
       dropAddItem(in, currentRoom, objects, 1);
+      cout<<"working2"<<endl;
     }
     else if(input == 3){
       char in[100];
