@@ -9,6 +9,9 @@ using namespace std;
 
 int main(){
   
+  vector<item*> objects;
+  vector<room*> rooms;
+  
   char N[10] = "NORTH";
   char E[10] = "EAST";
   char S[10] = "SOUTH";
