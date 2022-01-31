@@ -21,7 +21,7 @@ int main(){
   char S[10] = "SOUTH";
   char W[10] = "WEST";
   
-  char item[200] = " Paper Towel ";
+  char itemm[200] = " Paper Towel ";
   char label[200] = "French Class";
   char des[200] = "Bonjour! You are in the French Class... Yayyy!!";
   room* frenchclass = new room(label, des);
@@ -29,35 +29,35 @@ int main(){
   strcpy(label,"bathroom");
   strcpy(des,"You are now in the cleanest bathroom");
   room* bathroom = new room(label,des);
-  item* papertowel = new item(item);
+  item* papertowel = new item(itemm);
   bathroom->addItem(papertowel);
   
   strcpy(label,"library");
-  strcpy(item, "book");
+  strcpy(itemm, "book");
   strcpy(des,"Shh... everyone is studying in thr library");
   room* library = new room(label,des);
-  item* book = new item(item);
+  item* book = new item(itemm);
   library->addItem(book);
   
   strcpy(label,"Bio Class");
-  strcpy(item, "microscope");
+  strcpy(itemm, "microscope");
   strcpy(des,"Ohh is that connective tissue I see under the microscope in the Bio Class");
   room* bioclass = new room(label,des);
-  item* microscope = new item(item);
+  item* microscope = new item(itemm);
   bioclass->addItem(microscope);
   
   strcpy(label,"Computer Class");
-  strcpy(item, "computer");
+  strcpy(itemm, "computer");
   strcpy(des,"lets program zuul in the computer lab");
   room* computerclass = new room(label,des);
-  item* computer = new item(item);
+  item* computer = new item(itemm);
   computerclass->addItem(computer);
   
   strcpy(label,"Drama Room");
-  strcpy(item, "costumes");
+  strcpy(itemm, "costumes");
   strcpy(des,"we are in the drama room");
   room* dramaroom = new room(label,des);
-  item* costumes = new item(item);
+  item* costumes = new item(itemm);
   dramaroom->addItem(costumes);
   
   
