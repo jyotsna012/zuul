@@ -70,6 +70,6 @@ char* room::getLabel(){
   return label;
 }
 void room::addAround(char* d, room* n){
-  neighbors.insert{d,n};
+  neighbors.insert({d,n});
 }
 
