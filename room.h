@@ -18,7 +18,7 @@ class room{
     void addItem(item*);
     void printTheItems();
     void printTheExits();
-    void addAround(char*, room*);
+    void addNeighbor(char*, room*);
     char* getDes;
     char* getLabel;
     void removeItem(char*);
