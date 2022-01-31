@@ -5,4 +5,4 @@ class item{
     item(char*);
     char* getName();
     char* name;
-}
+};
