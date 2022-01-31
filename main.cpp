@@ -190,7 +190,7 @@ int main(){
     }
     else if(input == 2){
       int choice;
-      char in[10];
+      char in[100];
       cout << "which item will you pick up. enter the number associated with the item" << endl;
       cin >> choice;
       if(choice == 3){
@@ -200,7 +200,7 @@ int main(){
       dropAddItem(in, currentRoom, objects, 1);
     }
     else if(input == 3){
-      char in[10];
+      char in[100];
       cout << "which item do you want to drop" << endl;
       cin.get(in,10);
       cin.get();
