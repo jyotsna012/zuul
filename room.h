@@ -19,7 +19,7 @@ class room{
     void printTheItems();
     void printTheExits();
     void addAround(char*, room*);
-    char* getDes;
-    char* getLabel;
+    char* getDes();
+    char* getLabel();
     void removeItem(char*);
 };
