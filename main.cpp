@@ -21,7 +21,7 @@ int main(){
   char S[10] = "SOUTH";
   char W[10] = "WEST";
   
-  char itemm[200] = " Paper Towel ";
+  char itemm[200] = " Paper Towel - 1";
   char label[200] = "French Class";
   char des[200] = "Bonjour! You are in the French Class... Yayyy!!";
   room* frenchclass = new room(label, des);
@@ -33,28 +33,28 @@ int main(){
   bathroom->addItem(papertowel);
   
   strcpy(label,"library");
-  strcpy(itemm, "book");
+  strcpy(itemm, "book -2");
   strcpy(des,"Shh... everyone is studying in thr library");
   room* library = new room(label,des);
   item* book = new item(itemm);
   library->addItem(book);
   
   strcpy(label,"Bio Class");
-  strcpy(itemm, "microscope");
+  strcpy(itemm, "microscope - 3");
   strcpy(des,"Ohh is that connective tissue I see under the microscope in the Bio Class");
   room* bioclass = new room(label,des);
   item* microscope = new item(itemm);
   bioclass->addItem(microscope);
   
   strcpy(label,"Computer Class");
-  strcpy(itemm, "computer");
+  strcpy(itemm, "computer - 4");
   strcpy(des,"lets program zuul in the computer lab");
   room* computerclass = new room(label,des);
   item* computer = new item(itemm);
   computerclass->addItem(computer);
   
   strcpy(label,"Drama Room");
-  strcpy(itemm, "costumes");
+  strcpy(itemm, "costumes - 5");
   strcpy(des,"we are in the drama room");
   room* dramaroom = new room(label,des);
   item* costumes = new item(itemm);
@@ -166,7 +166,7 @@ int main(){
     else if(input == 1){
       char diDir[20];
       int exit;
-      cout << "type which exit you would like to use. Enter 1 for North, 2 for East. 3 for South, 4 for West" << endl;
+      cout << "which exit?. Enter 1 for North, 2 for East. 3 for South, 4 for West" << endl;
       cin >> exit;
       if(exit == 1){
       	strcpy(diDir, "NORTH");
@@ -185,14 +185,18 @@ int main(){
 	currentRoom = currentRoom->getNextRoom(diDir);
       }
       else{
-	cout << "this is not a valid exit" << endl;
+	cout << "not a valid exit" << endl;
       }
     }
     else if(input == 2){
+      int choice;
       char in[10];
-      cout << "which item will you pick up" << endl;
-      cin.get(in,10);
-      cin.get();
+      cout << "which item will you pick up. enter the number associated with the item" << endl;
+      cin >> choice;
+      if(choice == 3){
+      	strcpy(in, "microscope - 1")
+      
+      }
       dropAddItem(in, currentRoom, objects, 1);
     }
     else if(input == 3){
