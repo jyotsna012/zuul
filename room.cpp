@@ -8,21 +8,21 @@
 using namespace std;
 
 room::room(char* nLabel, char* nDes){
-  des = new char[200]
-  label = new char[200]
+  des = new char[200];
+  label = new char[200];
   strcpy(label, nLabel);
   strcpy(des, nDes);
 }
 
 void room::printTheItems(){
   cout << "here are the items in this room: " << endl;
-  for(vector<item*> :: interator it = items.begin(); it != items.end(); i++){
-    cout << (*it)->getLabel() << endl;
+  for(vector<item*> :: interator it = items.begin(); it != items.end(); it++){
+    cout << (*it)->getName() << endl;
   }
 }
 
 void room::printTheExits(){
-  map<char*,Room*>::iterator it;
+  map<char*,room*>::iterator it;
   for(it = neighbors.begin(); it != neighbors.end(); it++){
     cout << it->first << endl;
   }
