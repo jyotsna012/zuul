@@ -236,7 +236,6 @@ int main(){
       dropAddItem(in, currentRoom, objects, 2);
       cout<<"working2"<<endl;
     }
-    }
   }
   
   return 0;
