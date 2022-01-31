@@ -8,7 +8,7 @@
 using namespace std;
 
 void printObjects(vector<item*> objects);
-void dropAddItem(char* item, room* currentRoom, vector<item*> &objects, int addOrDrop);
+void dropAddItem(char* item, room* currentRoom, vector<item*> &objectss, int addOrDrop);
 void printRoom(room* a, vector<item*> b);
 
 int main(){
@@ -202,15 +202,15 @@ void printRoom(room* a, vector<item*> b){
   printObjects(b);
   cout << endl;
 }
-void dropAddItem(char* iName, room* currentRoom, vector<item*> &objects, int addOrDrop){
+void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int addOrDrop){
 
 	if(addOrDrop == 1){
-		objects.push_back(currentRoom->getItem(iName));
+		objectss.push_back(currentRoom->getItem(iName));
     		currentRoom->removeItem(iName);	
 	}
 	if(addOrDrop == 2){
 		
-		 for(vector<item*>::iterator it=objects.begin(); it!=objects.end(); it++){
+		 for(vector<item*>::iterator it=objectss.begin(); it!=objectss.end(); it++){
    		 	char* currentL = (*it)->getLabel() 
 		 	if(strcmp(iName,currentL)==0){
      		 	currentRoom->addItem(*it);
