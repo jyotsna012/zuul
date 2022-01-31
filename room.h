@@ -14,7 +14,7 @@ class room{
     map<char*, room*> neighbors;
     room(char*,char*);
     room* getNextRoom(char*);
-    room* getItem(char*);
+    item* getItem(char*);
     void addItem(item*);
     void printTheItems();
     void printTheExits();
