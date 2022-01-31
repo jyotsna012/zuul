@@ -40,7 +40,7 @@ room* room::getNextRoom(char* d){
 
 item* room::getItem(char* label){
   for(vector<item*>::iterator it = items.begin(); it!=items.end(); it++){
-    char* itemlabel = (*it)->getLabel();
+    char* itemlabel = (*it)->getName();
     if(strcmp(itemlabel,label)==0){
       return (*it);
     }
@@ -50,7 +50,7 @@ item* room::getItem(char* label){
 
 void room::removeItem(char* label){
   for(vector<item*>::iterator it = items.begin(); it!=items.end(); it++){
-    char* itemlabel = (*it)->getLabel();
+    char* itemlabel = (*it)->getName();
     if(strcmp(itemlabel,label)==0){
       items.erase(it);
       break;
@@ -62,14 +62,14 @@ void room::addItem(item* i){
   items.push_back(i);
 }
 
-char* Room::getDes(){
+char* room::getDes(){
   return des;
 }
 
-char* Room::getLabel(){
+char* room::getLabel(){
   return label;
 }
-void Room::addAround(char* d, room* n){
+void room::addAround(char* d, room* n){
   neighbors.insert({d,n});
 }
 
