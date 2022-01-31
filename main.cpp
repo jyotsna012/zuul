@@ -182,7 +182,7 @@ int main(){
       }
 	    
       if(currentRoom->getNextRoom(diDir)!=NULL){
-	currentRoom = currentRoom->getNextRoom(exit);
+	currentRoom = currentRoom->getNextRoom(diDir);
       }
       else{
 	cout << "this is not a valid exit" << endl;
