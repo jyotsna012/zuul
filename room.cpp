@@ -1,7 +1,7 @@
-#inlcude <iostream>
-#inlcude <cstring>
-#inlcude <map>
-#inlcude <vector>
+#include <iostream>
+#include <cstring>
+#include <map>
+#include <vector>
 #include "room.h"
 #include "item.h"
 
