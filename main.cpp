@@ -101,9 +101,25 @@ int main(){
   litclass -> addAround(S, historyclass);
   litclass -> addAround(E, frenchclass );
   litclass -> addAround(W, bioclass);
-
+  historyclass -> addAround(N, litclass);
+  frenchclass -> addAround(E, japaneseclass);
+  frenchclass -> addAround(W, litclass);
+  japaneseclass -> addAround(E, glopoclass);
+  japaneseclass -> addAround(W, frenchclass);
+  spanishclass -> addAround(S, glopoclass);
+  glopoclass -> addAround(S, computerclass );
+  glopoclass -> addAround(E, cafe);
+  glopoclass -> addAround(W, japaneseclass);
+  glopoclass -> addAround(N, spanishclass);
+  computerclass -> addAround(N, glopoclass);
+  cafe -> addAround(E, gym);
+  cafe -> addAround(W, glopoclass);
+  library -> addAround(S, gym);
+  gym -> addAround(N, library);
+  gym -> addAround(S, dramaroom);
+  gym -> addAround(W, cafe);
+  dramaroom -> addAround(N, gym);
   
-
   rooms.push_back(bathroom);
   rooms.push_back(mathclass);
   rooms.push_back(chemclass);
