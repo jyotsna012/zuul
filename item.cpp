@@ -3,7 +3,7 @@
 
 item::item(char* newN){
   name = new char[200];
-  strcpy(label, newN);
+  strcpy(name, newN);
 }
 char* item::getName(){
   return name;
