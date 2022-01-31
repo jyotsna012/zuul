@@ -1,3 +1,6 @@
+//Jyotsna Tera
+//ZUUL Game - Explore the school, pick up, and drop items.
+
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -7,20 +10,23 @@
 
 using namespace std;
 
+//function prototypes
 void printObjects(vector<item*> objects);
 void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int addOrDrop);
 void printRoom(room* a, vector<item*> b);
 
 int main(){
-  
+  //initializing vectors
   vector<item*> objects;
   vector<room*> rooms;
   
+  //setting the directions
   char N[10] = "NORTH";
   char E[10] = "EAST";
   char S[10] = "SOUTH";
   char W[10] = "WEST";
-  
+	
+  //creating the rooms and the items in the room  
   char itemm[200] = " Paper Towel - 1";
   char label[200] = "French Class";
   char des[200] = "Bonjour! You are in the French Class... Yayyy!!";
@@ -101,6 +107,7 @@ int main(){
   strcpy(des ,"We are in the Gym");
   room* gym = new room(label,des);
   
+ //adding neighbrs of the room
   bathroom -> addAround(S, mathclass);
   mathclass -> addAround(S, chemclass );
   mathclass -> addAround(N, bathroom);
@@ -132,6 +139,7 @@ int main(){
   gym -> addAround(W, cafe);
   dramaroom -> addAround(N, gym);
   
+  //adding rooms to vector
   rooms.push_back(bathroom);
   rooms.push_back(mathclass);
   rooms.push_back(chemclass);
@@ -149,23 +157,31 @@ int main(){
   rooms.push_back(gym);
   rooms.push_back(dramaroom);
   
+ //game starts in lit class
   room* currentRoom = litclass;
   int input;
+  //welcome
   cout << "Hi, this is the game ZUUL. You can go to a room, pick an item, drop an item, or quit the game. Have fun!"<< endl;
   while(true){
     cout << endl;
     printRoom(currentRoom,objects);
+    //game will continue unitl you reach the gym
     if(currentRoom == gym){
+      cout << "u are at the gym! u win!!"
       break;
     }
+    //asks the user for what to do
     cout << "You can enter 1 for go, 2 for pick up, 3 for drop, or 4 for quit!" << endl;
     cin >> input;
+    //will quit game if input = 4
     if(input == 4){
       break;
     }
+    //moving to another room
     else if(input == 1){
       char diDir[20];
       int exit;
+      //asking which direction to move in
       cout << "which exit?. Enter 1 for North, 2 for East. 3 for South, 4 for West" << endl;
       cin >> exit;
       if(exit == 1){
@@ -180,7 +196,8 @@ int main(){
       if(exit == 4){
 	strcpy(diDir, "WEST");
       }
-	    
+	
+      //chnages current room to the next room	    
       if(currentRoom->getNextRoom(diDir)!=NULL){
 	currentRoom = currentRoom->getNextRoom(diDir);
       }
@@ -188,6 +205,7 @@ int main(){
 	cout << "not a valid exit" << endl;
       }
     }
+    //picking up items
     else if(input == 2){
       int choice;
       char in[100];
@@ -212,6 +230,7 @@ int main(){
       dropAddItem(in, currentRoom, objects, 1);
       cout<<"working2"<<endl;
     }
+    //dropping items
     else if(input == 3){
       int choice;
       char in[100];
@@ -241,6 +260,7 @@ int main(){
   return 0;
 }
 
+//will print the current room, decription, and inventory
 void printRoom(room* a, vector<item*> b){
 
   char display[150];
@@ -253,6 +273,7 @@ void printRoom(room* a, vector<item*> b){
   printObjects(b);
   cout << endl;
 }
+//adds item to inventory or drops item
 void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int addOrDrop){
 
 	if(addOrDrop == 1){
@@ -272,6 +293,7 @@ void dropAddItem(char* iName, room* currentRoom, vector<item*> &objectss, int ad
 	}
 }
 
+//prints all the objects
 void printObjects(vector<item*> objects){
   for(vector<item*>::iterator it=objects.begin(); it!=objects.end(); it++){
     cout << (*it)->getName() << "  ";
