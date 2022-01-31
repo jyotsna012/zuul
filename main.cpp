@@ -194,7 +194,7 @@ int main(){
       cout << "which item will you pick up. enter the number associated with the item" << endl;
       cin >> choice;
       if(choice == 3){
-      	strcpy(in, "microscope - 1")
+      	strcpy(in, "microscope - 1");
       
       }
       dropAddItem(in, currentRoom, objects, 1);
