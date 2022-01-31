@@ -192,7 +192,7 @@ int main(){
 void printRoom(room* a, vector<item*> b){
 
   char display[150];
-  char* roomm = a->getDes()
+  char* roomm = a->getDes();
   strcpy(print,roomm);
   cout << print << endl;
   a->printItems();
