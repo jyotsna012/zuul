@@ -22,4 +22,4 @@ class room{
     char* getDes;
     char* getLabel;
     void removeItem(char*);
-}
+};
